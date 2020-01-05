@@ -13,9 +13,9 @@ on Python.
 * Net and total winnings displayed given a bet amount.
 
 ## Installation
-...
+```python
 python3 -m venv </path/to/new/virtual/environment>
 source <venv>/bin/activate
 pip install -r requirements.txt 
 python oddsCalculator.py
-...
+```
