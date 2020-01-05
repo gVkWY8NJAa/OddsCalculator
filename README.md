@@ -9,7 +9,7 @@ on Python.
 
 ## Key Features
 * Seamlessly enter odds in US or Decimal format, they will be automatically converted.
-* Calculate implied, and no vig, probabilities of winning based on two bets
+* Calculate implied, and no vig, probabilities of winning based on two bets.
 * Net and total winnings displayed given a bet amount.
 
 ## Installation
