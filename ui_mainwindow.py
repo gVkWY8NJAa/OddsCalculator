@@ -28,10 +28,10 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setVerticalSpacing(6)
         self.gridLayout.setContentsMargins(-1, -1, -1, 9)
-        self.label_4 = QLabel(self.centralwidget)
-        self.label_4.setObjectName(u"label_4")
+        self.label_Frac_odds = QLabel(self.centralwidget)
+        self.label_Frac_odds.setObjectName(u"label_Frac_odds")
 
-        self.gridLayout.addWidget(self.label_4, 6, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_Frac_odds, 6, 0, 1, 1)
 
         self.output_imp_pr_A = QLabel(self.centralwidget)
         self.output_imp_pr_A.setObjectName(u"output_imp_pr_A")
@@ -91,10 +91,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.output_dec_odds_A, 5, 1, 1, 1)
 
-        self.label_3 = QLabel(self.centralwidget)
-        self.label_3.setObjectName(u"label_3")
+        self.label_No_Vig = QLabel(self.centralwidget)
+        self.label_No_Vig.setObjectName(u"label_No_Vig")
 
-        self.gridLayout.addWidget(self.label_3, 10, 0, 1, 1)
+        self.gridLayout.addWidget(self.label_No_Vig, 10, 0, 1, 1)
 
         self.input_win_A = QLineEdit(self.centralwidget)
         self.input_win_A.setObjectName(u"input_win_A")
@@ -283,7 +283,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Odds Converter", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Fractional Odds", None))
+        self.label_Frac_odds.setText(QCoreApplication.translate("MainWindow", u"Fractional Odds", None))
         self.output_imp_pr_A.setText("")
         self.label_ImpliedPr.setText(QCoreApplication.translate("MainWindow", u"Implied Pr", None))
         self.label_DecOdds.setText(QCoreApplication.translate("MainWindow", u"Decimal Odds", None))
@@ -292,7 +292,7 @@ class Ui_MainWindow(object):
         self.output_frac_odds_A.setText("")
         self.output_net_dec_odds_A.setText("")
         self.output_dec_odds_A.setText("")
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"No Vig Imp Pr", None))
+        self.label_No_Vig.setText(QCoreApplication.translate("MainWindow", u"No Vig Imp Pr", None))
         self.input_win_A.setText("")
         self.convert_button.setText(QCoreApplication.translate("MainWindow", u"Convert", None))
         self.label_USOdds.setText(QCoreApplication.translate("MainWindow", u"US Odds", None))

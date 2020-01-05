@@ -21,6 +21,8 @@ class MainWindow(QMainWindow):
         # quit button
         self.ui.quitButton.clicked.connect(self.quit)
 
+        self.tooltips()
+
     def convert(self):
         oddsA, oddsB = False, False
         # load values from ui.odds
@@ -107,6 +109,26 @@ class MainWindow(QMainWindow):
             betAmtB = self.ui.input_betAmt_B.text()
             self.ui.input_win_B.setText("${:.2f}".format(Decimal(betAmtB) * netDecOddsB))
             self.ui.input_payout_B.setText("${:.2f}".format(Decimal(betAmtB) * decOddsB))
+
+    def tooltips(self):
+        # labels:
+        self.ui.label_USOdds.setToolTip("Odds expressed as the return relative to a 100 unit base figure.")
+        self.ui.label_DecOdds.setToolTip("Odds expressed as the total return including the original wager.")
+        self.ui.label_Frac_odds.setToolTip("Odds against expressed as a fraction.")
+        self.ui.label_NetOdds.setToolTip("Odds expressed as decimal indicating the amount won excluding the wager.")
+        self.ui.label_ImpliedPr.setToolTip("Implied probability of winning the bet given the odds.")
+        self.ui.label_No_Vig.setToolTip("Implied probability of winning the bet given the odds less the juice.")
+
+        # input boxes
+        self.ui.oddsA.setToolTip("Enter Odds for team A in US or Dec format.")
+        self.ui.oddsB.setToolTip("Enter Odds for team B in US or Dec format.")
+        self.ui.input_betAmt_A.setToolTip("Amount of wager for Team A.")
+        self.ui.input_betAmt_B.setToolTip("Amount of wager for Team B.")
+        self.ui.input_win_A.setToolTip("The amount won given your wager for team A.")
+        self.ui.input_win_B.setToolTip("The amount won given your wager for team B.")
+        self.ui.input_payout_A.setToolTip("Total amount won including your original wager for team A.")
+        self.ui.input_payout_B.setToolTip("Total amount won including your original wager for team B.")
+
 
     def quit(self):
         sys.exit(0)
