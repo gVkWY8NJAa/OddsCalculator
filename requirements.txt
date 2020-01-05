@@ -1,0 +1,4 @@
+pyside2
+pytest
+python-coveralls
+coverage==4.5.4

@@ -1,0 +1,6 @@
+*pycache*
+*.autosave
+.pytest_cache
+.ipynb_checkpoints
+*.ipynb
+htmlcov
