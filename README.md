@@ -16,6 +16,7 @@ on Python.
 ```python
 python3 -m venv </path/to/new/virtual/environment>
 source <venv>/bin/activate
-pip install -r requirements.txt 
+git checkout https://github.com/gVkWY8NJAa/OddsCalculator.git
+cd OddsCalculator && pip install -r requirements.txt 
 python oddsCalculator.py
 ```
