@@ -19,7 +19,7 @@ class Conversions:
         if valueAsDec > 0:
             return (valueAsDec / 100) + 1
         elif valueAsDec < 0:
-            return (100 / abs(valueAsDec) + 1)
+            return 100 / abs(valueAsDec) + 1
         else:
             return 0
 
@@ -35,7 +35,7 @@ class Conversions:
         if valueAsDec >= 2.0:
             return int((valueAsDec - 1) * 100)
         elif valueAsDec < 2.0:
-            return int(round(-100 / (valueAsDec -1),0))
+            return int(round(-100 / (valueAsDec - 1), 0))
 
     def dec_to_frac(self, value: Decimal) -> str:
         """
@@ -80,9 +80,9 @@ class Conversions:
         Returns:
              string: "dec, us"
         """
-        if re.match(r'[0-9]{1,4}\.[0-9]{1,4}', value):
+        if re.match(r"[0-9]{1,4}\.[0-9]{1,4}", value):
             return "dec"
-        elif re.match(r'(^\d{3}|^-\d{3})', value):
+        elif re.match(r"(^\d{3}|^-\d{3})", value):
             return "us"
         else:
             return None
@@ -95,4 +95,4 @@ class Conversions:
         Returns:
             ev (float): expected value (net odds * pr_win) + (pr_lose * wager)
         """
-        return (implied_pr * float(net)) + ((1 - implied_pr) * -1 )
+        return (implied_pr * float(net)) + ((1 - implied_pr) * -1)
