@@ -86,3 +86,13 @@ class Conversions:
             return "us"
         else:
             return None
+
+    def expected_value(self, net: Decimal, implied_pr: float) -> float:
+        """
+        calculate expected value based on implied probability
+        Args:
+            implied_pr (float): implied pr in decimal formal
+        Returns:
+            ev (float): expected value (net odds * pr_win) + (pr_lose * wager)
+        """
+        return (implied_pr * float(net)) + ((1 - implied_pr) * -1 )

@@ -51,11 +51,15 @@ class MainWindow(QMainWindow):
             # get fractional odds
             fracA = Conversions().dec_to_frac(decOddsA)
 
+            # get expected value
+            ev_A = Conversions().expected_value(netDecOddsA, impliedPrA)
+
             self.ui.output_dec_odds_A.setText("{:.4f}".format(decOddsA))
             self.ui.output_net_dec_odds_A.setText("{:.4f}".format(netDecOddsA))
             self.ui.output_imp_pr_A.setText("{:.4f}".format(impliedPrA))
             self.ui.output_us_odds_A.setText(f"{usOddsA}")
             self.ui.output_frac_odds_A.setText(f"{fracA}")
+            self.ui.output_ev_A.setText("{:.4f}".format(ev_A))
 
         if len(self.ui.oddsB.text()) != 0:
             oddsB = self.ui.oddsB.text()
@@ -82,11 +86,16 @@ class MainWindow(QMainWindow):
             # get fractional odds
             fracB = Conversions().dec_to_frac(decOddsB)
 
+            # get expected value
+            ev_B = Conversions().expected_value(netDecOddsB, impliedPrB)
+
             self.ui.output_dec_odds_B.setText("{:.4f}".format(decOddsB))
             self.ui.output_net_dec_odds_B.setText("{:.4f}".format(netDecOddsB))
             self.ui.output_imp_pr_B.setText("{:.4f}".format(impliedPrB))
             self.ui.output_us_odds_B.setText(f"{usOddsB}")
             self.ui.output_frac_odds_B.setText(f"{fracB}")
+            self.ui.output_ev_B.setText("{:.4f}".format(ev_B))
+
 
         else:
             oddsB = False
@@ -118,6 +127,7 @@ class MainWindow(QMainWindow):
         self.ui.label_NetOdds.setToolTip("Odds expressed as decimal indicating the amount won excluding the wager.")
         self.ui.label_ImpliedPr.setToolTip("Implied probability of winning the bet given the odds.")
         self.ui.label_No_Vig.setToolTip("Implied probability of winning the bet given the odds less the juice.")
+        self.ui.label_EV.setToolTip("Expected value based on implied probability from given odds as a percentage of $1")
 
         # input boxes
         self.ui.oddsA.setToolTip("Enter Odds for team A in US or Dec format.")
@@ -128,7 +138,6 @@ class MainWindow(QMainWindow):
         self.ui.input_win_B.setToolTip("The amount won given your wager for team B.")
         self.ui.input_payout_A.setToolTip("Total amount won including your original wager for team A.")
         self.ui.input_payout_B.setToolTip("Total amount won including your original wager for team B.")
-
 
     def quit(self):
         sys.exit(0)
