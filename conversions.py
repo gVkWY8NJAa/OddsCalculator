@@ -1,4 +1,3 @@
-from decimal import Decimal
 from fractions import Fraction
 import re
 
@@ -7,15 +6,15 @@ class Conversions:
     def __init__(self, *args, **kwagrs):
         pass
 
-    def us_to_dec(self, value: str) -> Decimal:
+    def us_to_dec(self, value: str) -> float:
         """
-        Convert US odds to Decimal
+        Convert US odds to float
         Args:
             value (str): US odds ie -600, 475
         Returns:
-            Decimal: converted us odds in decimal format
+            float: converted us odds in decimal format
         """
-        valueAsDec = Decimal(value)
+        valueAsDec = float(value)
         if valueAsDec > 0:
             return (valueAsDec / 100) + 1
         elif valueAsDec < 0:
@@ -31,17 +30,17 @@ class Conversions:
         Returns:
              int: converted us odds in int format
         """
-        valueAsDec = Decimal(value)
+        valueAsDec = float(value)
         if valueAsDec >= 2.0:
             return int((valueAsDec - 1) * 100)
         elif valueAsDec < 2.0:
             return int(round(-100 / (valueAsDec - 1), 0))
 
-    def dec_to_frac(self, value: Decimal) -> str:
+    def dec_to_frac(self, value: float) -> str:
         """
         Convert decimal odds to fractional odds
         Args:
-            value (decimal): odds in decimal.Decimal() format
+            value (decimal): odds in decimal.float() format
         """
         net = value - 1
         return str(Fraction(net).limit_denominator(1000))
@@ -61,12 +60,12 @@ class Conversions:
         else:
             return 0
 
-    def no_vig(self, value1: Decimal, value2: Decimal) -> Decimal:
+    def no_vig(self, value1: float, value2: float) -> float:
         """
         Calculates the implied no vig probability given implied probabilities for two bets
         Args:
-            value1 (Decimal): implied probability for the side you want to find the adjusted no vig Pr for
-            value2 (Decimal): implied probability of the other side of the bet
+            value1 (float): implied probability for the side you want to find the adjusted no vig Pr for
+            value2 (float): implied probability of the other side of the bet
         Returns:
             float: No vig implied probability for value1
         """
@@ -87,12 +86,13 @@ class Conversions:
         else:
             return None
 
-    def expected_value(self, net: Decimal, implied_pr: float) -> float:
+    def expected_value(self, decOdds: float, implied_pr: float) -> float:
         """
         calculate expected value based on implied probability
         Args:
+            decOdds (float): Decimal odds of the wager
             implied_pr (float): implied pr in decimal formal
         Returns:
             ev (float): expected value (net odds * pr_win) + (pr_lose * wager)
         """
-        return (implied_pr * float(net)) + ((1 - implied_pr) * -1)
+        return (decOdds * implied_pr) + ((1 - implied_pr) * -1)

@@ -1,5 +1,4 @@
 import sys
-from decimal import Decimal
 from PySide2.QtWidgets import QApplication, QMainWindow, QLabel
 
 # here we have to load the converted .ui file as a module
@@ -40,7 +39,7 @@ class MainWindow(QMainWindow):
                 usOddsA = Conversions().dec_to_us(oddsA)
 
                 # set decOdds
-                decOddsA = Decimal(oddsA)
+                decOddsA = float(oddsA)
 
             # Calculate net odds
             netDecOddsA = decOddsA - 1
@@ -75,7 +74,7 @@ class MainWindow(QMainWindow):
                 usOddsB = Conversions().dec_to_us(oddsB)
 
                 # set decOdds
-                decOddsB = Decimal(oddsB)
+                decOddsB = float(oddsB)
 
             # Calculate net odds
             netDecOddsB = decOddsB - 1
@@ -111,19 +110,19 @@ class MainWindow(QMainWindow):
         if len(self.ui.input_betAmt_A.text()) != 0 and oddsA:
             betAmtA = self.ui.input_betAmt_A.text()
             self.ui.input_win_A.setText(
-                "${:.2f}".format(Decimal(betAmtA) * netDecOddsA)
+                "${:.2f}".format(float(betAmtA) * netDecOddsA)
             )
             self.ui.input_payout_A.setText(
-                "${:.2f}".format(Decimal(betAmtA) * decOddsA)
+                "${:.2f}".format(float(betAmtA) * decOddsA)
             )
 
         if len(self.ui.input_betAmt_B.text()) != 0 and oddsB:
             betAmtB = self.ui.input_betAmt_B.text()
             self.ui.input_win_B.setText(
-                "${:.2f}".format(Decimal(betAmtB) * netDecOddsB)
+                "${:.2f}".format(float(betAmtB) * netDecOddsB)
             )
             self.ui.input_payout_B.setText(
-                "${:.2f}".format(Decimal(betAmtB) * decOddsB)
+                "${:.2f}".format(float(betAmtB) * decOddsB)
             )
 
     def tooltips(self):
