@@ -9,7 +9,6 @@ on Python.
 
 
 ## Contents
-* [Key Features](#key features)
 * [Installation](#installation)
 
 ## Key Features
