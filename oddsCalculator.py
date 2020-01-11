@@ -58,7 +58,10 @@ class MainWindow(QMainWindow):
             self.ui.output_imp_pr_A.setText("{:.4f}".format(impliedPrA))
             self.ui.output_us_odds_A.setText(f"{usOddsA}")
             self.ui.output_frac_odds_A.setText(f"{fracA}")
-            self.ui.output_ev_A.setText("{:.4f}".format(ev_A))
+            if ev_A > 0 :
+                self.ui.output_ev_A.setText("+{:.4f}".format(ev_A))
+            else:
+                self.ui.output_ev_A.setText("{:.4f}".format(ev_A))
 
         if len(self.ui.oddsB.text()) != 0:
             oddsB = self.ui.oddsB.text()
@@ -93,7 +96,10 @@ class MainWindow(QMainWindow):
             self.ui.output_imp_pr_B.setText("{:.4f}".format(impliedPrB))
             self.ui.output_us_odds_B.setText(f"{usOddsB}")
             self.ui.output_frac_odds_B.setText(f"{fracB}")
-            self.ui.output_ev_B.setText("{:.4f}".format(ev_B))
+            if ev_B > 0:
+                self.ui.output_ev_B.setText("+{:.4f}".format(ev_B))
+            else:
+                self.ui.output_ev_B.setText("{:.4f}".format(ev_B))
 
         else:
             oddsB = False
