@@ -58,7 +58,7 @@ class MainWindow(QMainWindow):
             self.ui.output_imp_pr_A.setText("{:.4f}".format(impliedPrA))
             self.ui.output_us_odds_A.setText(f"{usOddsA}")
             self.ui.output_frac_odds_A.setText(f"{fracA}")
-            if ev_A > 0 :
+            if ev_A > 0:
                 self.ui.output_ev_A.setText("+{:.4f}".format(ev_A))
             else:
                 self.ui.output_ev_A.setText("{:.4f}".format(ev_A))
@@ -115,21 +115,13 @@ class MainWindow(QMainWindow):
 
         if len(self.ui.input_betAmt_A.text()) != 0 and oddsA:
             betAmtA = self.ui.input_betAmt_A.text()
-            self.ui.input_win_A.setText(
-                "${:.2f}".format(float(betAmtA) * netDecOddsA)
-            )
-            self.ui.input_payout_A.setText(
-                "${:.2f}".format(float(betAmtA) * decOddsA)
-            )
+            self.ui.input_win_A.setText("${:.2f}".format(float(betAmtA) * netDecOddsA))
+            self.ui.input_payout_A.setText("${:.2f}".format(float(betAmtA) * decOddsA))
 
         if len(self.ui.input_betAmt_B.text()) != 0 and oddsB:
             betAmtB = self.ui.input_betAmt_B.text()
-            self.ui.input_win_B.setText(
-                "${:.2f}".format(float(betAmtB) * netDecOddsB)
-            )
-            self.ui.input_payout_B.setText(
-                "${:.2f}".format(float(betAmtB) * decOddsB)
-            )
+            self.ui.input_win_B.setText("${:.2f}".format(float(betAmtB) * netDecOddsB))
+            self.ui.input_payout_B.setText("${:.2f}".format(float(betAmtB) * decOddsB))
 
     def tooltips(self):
         # labels:

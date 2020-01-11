@@ -32,12 +32,8 @@ def test_impliedPr():
 
 
 def test_noVig():
-    assert Conversions().no_vig(0.52, 0.58) == (
-        0.4727272727272727272727272727
-    )
-    assert Conversions().no_vig(0.1739, 0.5238) == (
-        0.2492475275906550093163250681
-    )
+    assert Conversions().no_vig(0.52, 0.58) == (0.4727272727272727272727272727)
+    assert Conversions().no_vig(0.1739, 0.5238) == (0.2492475275906550093163250681)
 
 
 def test_odds_type():
@@ -47,6 +43,7 @@ def test_odds_type():
     assert Conversions().odds_type("21.033") == "dec"
     assert Conversions().odds_type("") == None
 
+
 def test_expected_value():
-    assert Conversions().expected_value(2.0, .57) == 0.7099999999999999
-    assert Conversions().expected_value(3.0, .34) == 0.3600000000000001
+    assert Conversions().expected_value(2.0, 0.57) == 0.7099999999999999
+    assert Conversions().expected_value(3.0, 0.34) == 0.3600000000000001
