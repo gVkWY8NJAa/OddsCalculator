@@ -33,15 +33,65 @@
     <property name="verticalSpacing">
      <number>6</number>
     </property>
-    <item row="6" column="0">
-     <widget class="QLabel" name="label_Frac_odds">
+    <item row="13" column="2">
+     <widget class="QLineEdit" name="input_win_B">
       <property name="text">
-       <string>Fractional Odds</string>
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
-    <item row="9" column="1">
-     <widget class="QLabel" name="output_imp_pr_A">
+    <item row="8" column="2">
+     <widget class="QLabel" name="output_net_dec_odds_B">
+      <property name="font">
+       <font>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="0">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Bet Amount ($)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="1">
+     <widget class="QLabel" name="output_no_vig_A">
+      <property name="font">
+       <font>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="1">
+     <widget class="QLineEdit" name="input_betAmt_A">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="2">
+     <widget class="QLabel" name="output_no_vig_B">
       <property name="font">
        <font>
         <italic>true</italic>
@@ -62,159 +112,10 @@
       </property>
      </widget>
     </item>
-    <item row="9" column="0">
-     <widget class="QLabel" name="label_ImpliedPr">
+    <item row="14" column="0">
+     <widget class="QLabel" name="label_7">
       <property name="text">
-       <string>Implied Pr</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0">
-     <widget class="QLabel" name="label_DecOdds">
-      <property name="text">
-       <string>Decimal Odds</string>
-      </property>
-     </widget>
-    </item>
-    <item row="11" column="1">
-     <widget class="QLineEdit" name="input_betAmt_A">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QLabel" name="output_us_odds_A">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="1">
-     <widget class="QLabel" name="output_frac_odds_A">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="1">
-     <widget class="QLabel" name="output_net_dec_odds_A">
-      <property name="font">
-       <font>
-        <italic>true</italic>
-       </font>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1">
-     <widget class="QLabel" name="output_dec_odds_A">
-      <property name="font">
-       <font>
-        <italic>true</italic>
-       </font>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="10" column="0">
-     <widget class="QLabel" name="label_No_Vig">
-      <property name="text">
-       <string>No Vig Imp Pr</string>
-      </property>
-     </widget>
-    </item>
-    <item row="12" column="1">
-     <widget class="QLineEdit" name="input_win_A">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2">
-     <widget class="QLineEdit" name="oddsB">
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="14" column="1" colspan="2">
-     <widget class="QPushButton" name="convert_button">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>28</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Convert</string>
-      </property>
-      <property name="autoDefault">
-       <bool>true</bool>
-      </property>
-      <property name="default">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QLineEdit" name="oddsA">
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="label_USOdds">
-      <property name="text">
-       <string>US Odds</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0" colspan="3">
-     <widget class="Line" name="line">
-      <property name="font">
-       <font>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Sunken</enum>
-      </property>
-      <property name="lineWidth">
-       <number>1</number>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+       <string>Payout ($)</string>
       </property>
      </widget>
     </item>
@@ -225,8 +126,18 @@
       </property>
      </widget>
     </item>
-    <item row="8" column="2">
-     <widget class="QLabel" name="output_net_dec_odds_B">
+    <item row="6" column="2">
+     <widget class="QLabel" name="output_frac_odds_B">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="2">
+     <widget class="QLabel" name="output_imp_pr_B">
       <property name="font">
        <font>
         <italic>true</italic>
@@ -240,7 +151,34 @@
       </property>
      </widget>
     </item>
-    <item row="14" column="0">
+    <item row="14" column="1">
+     <widget class="QLineEdit" name="input_payout_A">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="1">
+     <widget class="QLineEdit" name="input_win_A">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="oddsA">
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="15" column="0">
      <widget class="QPushButton" name="quitButton">
       <property name="minimumSize">
        <size>
@@ -265,15 +203,25 @@
       </property>
      </widget>
     </item>
-    <item row="11" column="0">
-     <widget class="QLabel" name="label_5">
+    <item row="14" column="2">
+     <widget class="QLineEdit" name="input_payout_B">
       <property name="text">
-       <string>Bet Amount ($)</string>
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
-    <item row="5" column="2">
-     <widget class="QLabel" name="output_dec_odds_B">
+    <item row="13" column="0">
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>To Win ($)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QLabel" name="output_dec_odds_A">
       <property name="font">
        <font>
         <italic>true</italic>
@@ -287,22 +235,7 @@
       </property>
      </widget>
     </item>
-    <item row="10" column="2">
-     <widget class="QLabel" name="output_no_vig_B">
-      <property name="font">
-       <font>
-        <italic>true</italic>
-       </font>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="11" column="2">
+    <item row="12" column="2">
      <widget class="QLineEdit" name="input_betAmt_B">
       <property name="text">
        <string/>
@@ -328,10 +261,132 @@
       </property>
      </widget>
     </item>
-    <item row="12" column="0">
-     <widget class="QLabel" name="label_6">
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_Frac_odds">
       <property name="text">
-       <string>To Win ($)</string>
+       <string>Fractional Odds</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_USOdds">
+      <property name="text">
+       <string>US Odds</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QLabel" name="output_us_odds_B">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="0">
+     <widget class="QLabel" name="label_ImpliedPr">
+      <property name="text">
+       <string>Implied Pr</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QLabel" name="output_frac_odds_A">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_DecOdds">
+      <property name="text">
+       <string>Decimal Odds</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="label_Odds_1">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Team A</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="QLabel" name="output_net_dec_odds_A">
+      <property name="font">
+       <font>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLabel" name="output_us_odds_A">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="1">
+     <widget class="QLabel" name="output_imp_pr_A">
+      <property name="font">
+       <font>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="15" column="1" colspan="2">
+     <widget class="QPushButton" name="convert_button">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>28</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Convert</string>
+      </property>
+      <property name="autoDefault">
+       <bool>true</bool>
+      </property>
+      <property name="default">
+       <bool>false</bool>
       </property>
      </widget>
     </item>
@@ -357,34 +412,27 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="2">
-     <widget class="QLabel" name="output_us_odds_B">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLabel" name="label_Odds_1">
+    <item row="3" column="0" colspan="3">
+     <widget class="Line" name="line">
       <property name="font">
        <font>
-        <weight>75</weight>
-        <bold>true</bold>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
-      <property name="text">
-       <string>Team A</string>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
       </property>
      </widget>
     </item>
-    <item row="9" column="2">
-     <widget class="QLabel" name="output_imp_pr_B">
+    <item row="5" column="2">
+     <widget class="QLabel" name="output_dec_odds_B">
       <property name="font">
        <font>
         <italic>true</italic>
@@ -398,38 +446,10 @@
       </property>
      </widget>
     </item>
-    <item row="6" column="2">
-     <widget class="QLabel" name="output_frac_odds_B">
+    <item row="10" column="0">
+     <widget class="QLabel" name="label_No_Vig">
       <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="12" column="2">
-     <widget class="QLineEdit" name="input_win_B">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="10" column="1">
-     <widget class="QLabel" name="output_no_vig_A">
-      <property name="font">
-       <font>
-        <italic>true</italic>
-       </font>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       <string>No Vig Imp Pr</string>
       </property>
      </widget>
     </item>
@@ -440,30 +460,37 @@
       </property>
      </widget>
     </item>
-    <item row="13" column="0">
-     <widget class="QLabel" name="label_7">
-      <property name="text">
-       <string>Payout ($)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="13" column="1">
-     <widget class="QLineEdit" name="input_payout_A">
-      <property name="text">
-       <string/>
-      </property>
+    <item row="2" column="2">
+     <widget class="QLineEdit" name="oddsB">
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
-    <item row="13" column="2">
-     <widget class="QLineEdit" name="input_payout_B">
+    <item row="11" column="0">
+     <widget class="QLabel" name="label_EV">
+      <property name="text">
+       <string>Expected Value</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="1">
+     <widget class="QLabel" name="output_ev_A">
       <property name="text">
        <string/>
       </property>
       <property name="alignment">
-       <set>Qt::AlignCenter</set>
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="2">
+     <widget class="QLabel" name="output_ev_B">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
     </item>

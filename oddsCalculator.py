@@ -1,5 +1,4 @@
 import sys
-from decimal import Decimal
 from PySide2.QtWidgets import QApplication, QMainWindow, QLabel
 
 # here we have to load the converted .ui file as a module
@@ -40,7 +39,7 @@ class MainWindow(QMainWindow):
                 usOddsA = Conversions().dec_to_us(oddsA)
 
                 # set decOdds
-                decOddsA = Decimal(oddsA)
+                decOddsA = float(oddsA)
 
             # Calculate net odds
             netDecOddsA = decOddsA - 1
@@ -51,11 +50,18 @@ class MainWindow(QMainWindow):
             # get fractional odds
             fracA = Conversions().dec_to_frac(decOddsA)
 
+            # get expected value
+            ev_A = Conversions().expected_value(netDecOddsA, impliedPrA)
+
             self.ui.output_dec_odds_A.setText("{:.4f}".format(decOddsA))
             self.ui.output_net_dec_odds_A.setText("{:.4f}".format(netDecOddsA))
             self.ui.output_imp_pr_A.setText("{:.4f}".format(impliedPrA))
             self.ui.output_us_odds_A.setText(f"{usOddsA}")
             self.ui.output_frac_odds_A.setText(f"{fracA}")
+            if ev_A > 0:
+                self.ui.output_ev_A.setText("+{:.4f}".format(ev_A))
+            else:
+                self.ui.output_ev_A.setText("{:.4f}".format(ev_A))
 
         if len(self.ui.oddsB.text()) != 0:
             oddsB = self.ui.oddsB.text()
@@ -71,7 +77,7 @@ class MainWindow(QMainWindow):
                 usOddsB = Conversions().dec_to_us(oddsB)
 
                 # set decOdds
-                decOddsB = Decimal(oddsB)
+                decOddsB = float(oddsB)
 
             # Calculate net odds
             netDecOddsB = decOddsB - 1
@@ -82,11 +88,18 @@ class MainWindow(QMainWindow):
             # get fractional odds
             fracB = Conversions().dec_to_frac(decOddsB)
 
+            # get expected value
+            ev_B = Conversions().expected_value(netDecOddsB, impliedPrB)
+
             self.ui.output_dec_odds_B.setText("{:.4f}".format(decOddsB))
             self.ui.output_net_dec_odds_B.setText("{:.4f}".format(netDecOddsB))
             self.ui.output_imp_pr_B.setText("{:.4f}".format(impliedPrB))
             self.ui.output_us_odds_B.setText(f"{usOddsB}")
             self.ui.output_frac_odds_B.setText(f"{fracB}")
+            if ev_B > 0:
+                self.ui.output_ev_B.setText("+{:.4f}".format(ev_B))
+            else:
+                self.ui.output_ev_B.setText("{:.4f}".format(ev_B))
 
         else:
             oddsB = False
@@ -102,22 +115,35 @@ class MainWindow(QMainWindow):
 
         if len(self.ui.input_betAmt_A.text()) != 0 and oddsA:
             betAmtA = self.ui.input_betAmt_A.text()
-            self.ui.input_win_A.setText("${:.2f}".format(Decimal(betAmtA) * netDecOddsA))
-            self.ui.input_payout_A.setText("${:.2f}".format(Decimal(betAmtA) * decOddsA))
+            self.ui.input_win_A.setText("${:.2f}".format(float(betAmtA) * netDecOddsA))
+            self.ui.input_payout_A.setText("${:.2f}".format(float(betAmtA) * decOddsA))
 
         if len(self.ui.input_betAmt_B.text()) != 0 and oddsB:
             betAmtB = self.ui.input_betAmt_B.text()
-            self.ui.input_win_B.setText("${:.2f}".format(Decimal(betAmtB) * netDecOddsB))
-            self.ui.input_payout_B.setText("${:.2f}".format(Decimal(betAmtB) * decOddsB))
+            self.ui.input_win_B.setText("${:.2f}".format(float(betAmtB) * netDecOddsB))
+            self.ui.input_payout_B.setText("${:.2f}".format(float(betAmtB) * decOddsB))
 
     def tooltips(self):
         # labels:
-        self.ui.label_USOdds.setToolTip("Odds expressed as the return relative to a 100 unit base figure.")
-        self.ui.label_DecOdds.setToolTip("Odds expressed as the total return including the original wager.")
+        self.ui.label_USOdds.setToolTip(
+            "Odds expressed as the return relative to a 100 unit base figure."
+        )
+        self.ui.label_DecOdds.setToolTip(
+            "Odds expressed as the total return including the original wager."
+        )
         self.ui.label_Frac_odds.setToolTip("Odds against expressed as a fraction.")
-        self.ui.label_NetOdds.setToolTip("Odds expressed as decimal indicating the amount won excluding the wager.")
-        self.ui.label_ImpliedPr.setToolTip("Implied probability of winning the bet given the odds.")
-        self.ui.label_No_Vig.setToolTip("Implied probability of winning the bet given the odds less the juice.")
+        self.ui.label_NetOdds.setToolTip(
+            "Odds expressed as decimal indicating the amount won excluding the wager."
+        )
+        self.ui.label_ImpliedPr.setToolTip(
+            "Implied probability of winning the bet given the odds."
+        )
+        self.ui.label_No_Vig.setToolTip(
+            "Implied probability of winning the bet given the odds less the juice."
+        )
+        self.ui.label_EV.setToolTip(
+            "Expected value based on implied probability from given odds as a percentage of $1"
+        )
 
         # input boxes
         self.ui.oddsA.setToolTip("Enter Odds for team A in US or Dec format.")
@@ -126,9 +152,12 @@ class MainWindow(QMainWindow):
         self.ui.input_betAmt_B.setToolTip("Amount of wager for Team B.")
         self.ui.input_win_A.setToolTip("The amount won given your wager for team A.")
         self.ui.input_win_B.setToolTip("The amount won given your wager for team B.")
-        self.ui.input_payout_A.setToolTip("Total amount won including your original wager for team A.")
-        self.ui.input_payout_B.setToolTip("Total amount won including your original wager for team B.")
-
+        self.ui.input_payout_A.setToolTip(
+            "Total amount won including your original wager for team A."
+        )
+        self.ui.input_payout_B.setToolTip(
+            "Total amount won including your original wager for team B."
+        )
 
     def quit(self):
         sys.exit(0)
