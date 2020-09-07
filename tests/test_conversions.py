@@ -1,6 +1,11 @@
 from conversions import Conversions
 import pytest
 
+def test_frac_to_dec():
+    assert Conversions().frac_to_dec("4:1") == 5.0
+    assert Conversions().frac_to_dec("4/1") == 5.0
+    assert Conversions().frac_to_dec("1:4") == 1.25
+    assert Conversions().frac_to_dec("1/4") == 1.25
 
 def test_us_to_dec():
     assert Conversions().us_to_dec("-606") == 1.165016501650165016501650165
