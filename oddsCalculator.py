@@ -41,6 +41,13 @@ class MainWindow(QMainWindow):
                 # set decOdds
                 decOddsA = float(oddsA)
 
+            if Conversions().odds_type(oddsA) == 'frac':
+                # get dec odds from frac
+                decOddsA = Conversions().frac_to_dec(oddsA)
+
+                # get us odds from dec
+                usOddsA = Conversions().dec_to_us(decOddsA)
+
             # Calculate net odds
             netDecOddsA = decOddsA - 1
 
@@ -78,6 +85,13 @@ class MainWindow(QMainWindow):
 
                 # set decOdds
                 decOddsB = float(oddsB)
+
+            if Conversions().odds_type(oddsB) == 'frac':
+                # get dec odds from frac
+                decOddsB = Conversions().frac_to_dec(oddsB)
+
+                # get us odds from dec
+                usOddsB = Conversions().dec_to_us(decOddsB)
 
             # Calculate net odds
             netDecOddsB = decOddsB - 1
