@@ -22,6 +22,23 @@ class Conversions:
         else:
             return 0
 
+    def frac_to_dec(self, value: str) -> float:
+        """
+        Convert fractional odds to decimal odds
+        Args:
+            value (str): fractional odds ie 4:1 or 4/1
+        Returns:
+             float converted fractional odds in decimal format
+        """
+        if ':' in value:
+            f, a = int(value.split(':')[0]), int(value.split(':')[1])
+            return (f/a)+1
+        if '/' in value:
+            f, a = int(value.split('/')[0]), int(value.split('/')[1])
+            return (f/a)+1
+        else:
+            return 0
+
     def dec_to_us(self, value: str) -> int:
         """
         Convert decimal odds to US
@@ -83,6 +100,8 @@ class Conversions:
             return "dec"
         elif re.match(r"(^\d{3}|^-\d{3})", value):
             return "us"
+        elif re.match(r"[0-9]{1,4}(\:|\/)[0-9]{1,4}", value):
+            return 'frac'
         else:
             return None
 
