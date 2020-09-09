@@ -57,7 +57,7 @@ class Ui_MainWindow(object):
 
         self.input_betAmt_B = QLineEdit(self.centralwidget)
         self.input_betAmt_B.setObjectName(u"input_betAmt_B")
-        self.input_betAmt_B.setFocusPolicy(Qt.NoFocus)
+        self.input_betAmt_B.setFocusPolicy(Qt.ClickFocus)
         self.input_betAmt_B.setAlignment(Qt.AlignCenter)
 
         self.gridLayout.addWidget(self.input_betAmt_B, 13, 2, 1, 1)
@@ -133,7 +133,7 @@ class Ui_MainWindow(object):
 
         self.input_payout_A = QLineEdit(self.centralwidget)
         self.input_payout_A.setObjectName(u"input_payout_A")
-        self.input_payout_A.setFocusPolicy(Qt.NoFocus)
+        self.input_payout_A.setFocusPolicy(Qt.ClickFocus)
         self.input_payout_A.setAlignment(Qt.AlignCenter)
 
         self.gridLayout.addWidget(self.input_payout_A, 15, 1, 1, 1)
@@ -152,7 +152,7 @@ class Ui_MainWindow(object):
 
         self.input_payout_B = QLineEdit(self.centralwidget)
         self.input_payout_B.setObjectName(u"input_payout_B")
-        self.input_payout_B.setFocusPolicy(Qt.NoFocus)
+        self.input_payout_B.setFocusPolicy(Qt.ClickFocus)
         self.input_payout_B.setAlignment(Qt.AlignCenter)
 
         self.gridLayout.addWidget(self.input_payout_B, 15, 2, 1, 1)
@@ -172,14 +172,14 @@ class Ui_MainWindow(object):
 
         self.input_betAmt_A = QLineEdit(self.centralwidget)
         self.input_betAmt_A.setObjectName(u"input_betAmt_A")
-        self.input_betAmt_A.setFocusPolicy(Qt.NoFocus)
+        self.input_betAmt_A.setFocusPolicy(Qt.ClickFocus)
         self.input_betAmt_A.setAlignment(Qt.AlignCenter)
 
         self.gridLayout.addWidget(self.input_betAmt_A, 13, 1, 1, 1)
 
         self.input_win_A = QLineEdit(self.centralwidget)
         self.input_win_A.setObjectName(u"input_win_A")
-        self.input_win_A.setFocusPolicy(Qt.NoFocus)
+        self.input_win_A.setFocusPolicy(Qt.ClickFocus)
         self.input_win_A.setAlignment(Qt.AlignCenter)
 
         self.gridLayout.addWidget(self.input_win_A, 14, 1, 1, 1)
@@ -290,7 +290,7 @@ class Ui_MainWindow(object):
 
         self.input_win_B = QLineEdit(self.centralwidget)
         self.input_win_B.setObjectName(u"input_win_B")
-        self.input_win_B.setFocusPolicy(Qt.NoFocus)
+        self.input_win_B.setFocusPolicy(Qt.ClickFocus)
         self.input_win_B.setAlignment(Qt.AlignCenter)
 
         self.gridLayout.addWidget(self.input_win_B, 14, 2, 1, 1)
@@ -302,13 +302,13 @@ class Ui_MainWindow(object):
 
         self.input_pr_A = QLineEdit(self.centralwidget)
         self.input_pr_A.setObjectName(u"input_pr_A")
-        self.input_pr_A.setFocusPolicy(Qt.NoFocus)
+        self.input_pr_A.setFocusPolicy(Qt.ClickFocus)
 
         self.gridLayout.addWidget(self.input_pr_A, 12, 1, 1, 1)
 
         self.input_pr_B = QLineEdit(self.centralwidget)
         self.input_pr_B.setObjectName(u"input_pr_B")
-        self.input_pr_B.setFocusPolicy(Qt.NoFocus)
+        self.input_pr_B.setFocusPolicy(Qt.ClickFocus)
 
         self.gridLayout.addWidget(self.input_pr_B, 12, 2, 1, 1)
 
