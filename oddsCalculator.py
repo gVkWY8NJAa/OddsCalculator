@@ -14,6 +14,10 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
+        # enter pressed in text box converts
+        self.ui.oddsA.returnPressed.connect(self.convert)
+        self.ui.oddsB.returnPressed.connect(self.convert)
+
         # call the slot based on the signal (clicked)
         self.ui.convert_button.clicked.connect(self.convert)
 

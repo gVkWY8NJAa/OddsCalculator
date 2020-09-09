@@ -77,6 +77,9 @@
     </item>
     <item row="13" column="2">
      <widget class="QLineEdit" name="input_betAmt_B">
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -198,6 +201,9 @@
     </item>
     <item row="15" column="1">
      <widget class="QLineEdit" name="input_payout_A">
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -230,6 +236,9 @@
     </item>
     <item row="15" column="2">
      <widget class="QLineEdit" name="input_payout_B">
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -265,6 +274,9 @@
     </item>
     <item row="13" column="1">
      <widget class="QLineEdit" name="input_betAmt_A">
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -275,6 +287,9 @@
     </item>
     <item row="14" column="1">
      <widget class="QLineEdit" name="input_win_A">
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -486,6 +501,9 @@
     </item>
     <item row="14" column="2">
      <widget class="QLineEdit" name="input_win_B">
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -502,14 +520,28 @@
      </widget>
     </item>
     <item row="12" column="1">
-     <widget class="QLineEdit" name="input_pr_A"/>
+     <widget class="QLineEdit" name="input_pr_A">
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+     </widget>
     </item>
     <item row="12" column="2">
-     <widget class="QLineEdit" name="input_pr_B"/>
+     <widget class="QLineEdit" name="input_pr_B">
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>oddsA</tabstop>
+  <tabstop>oddsB</tabstop>
+  <tabstop>convert_button</tabstop>
+  <tabstop>quitButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
